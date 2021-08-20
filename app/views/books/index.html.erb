@@ -14,7 +14,7 @@
 <div>
   <p>投稿ユーザー画像</p>
   <p><%= book.user.name %></p>
-  <p><%= book.title %></p>
+  <%= link_to book.title, book_path(book.id) %>
   <p><%= book.opinion %></p>
 </div>
 <% end %>
