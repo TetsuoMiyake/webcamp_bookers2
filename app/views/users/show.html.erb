@@ -11,6 +11,7 @@
 
 <h1>Books</h1>
 <% @user.books.each do |book| %>
+ <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
  <%= link_to book.title, book_path(book.id) %>
  <%= book.opinion %>
 <% end %>

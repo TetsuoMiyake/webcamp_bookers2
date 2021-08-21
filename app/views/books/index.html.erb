@@ -12,7 +12,7 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
 <div>
-  <p>投稿ユーザー画像</p>
+  <%= attachment_image_tag book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
   <p><%= book.user.name %></p>
   <%= link_to book.title, book_path(book.id) %>
   <p><%= book.opinion %></p>
