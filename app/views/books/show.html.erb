@@ -10,7 +10,7 @@
   <p><%= @book_detail.body %></p>
   <% if @book_detail.user == current_user %>
    <%= link_to "Edit", edit_book_path(@book_detail) %>
-   <%= link_to "Destroy", book_path(@book_detail), method: :delete %>
+   <%= link_to "Destroy", book_path(@book_detail), method: :delete, date: { confirm: '本当に消しますか?' } %>
   <% end %>
 
 </div>
