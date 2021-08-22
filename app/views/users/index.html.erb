@@ -1,3 +1,9 @@
+<h1>User info</h1>
+<%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+<p>name<%= current_user.name %></p>
+<p>introduction<%= current_user.introduction %></p>
+<%= link_to "edit", edit_user_path(current_user.id) %>
+
 <h1>New book</h1>
 <%= form_with model:@book, local:true do |f| %>
  <p>Title</p>
@@ -13,7 +19,7 @@
 <% @users.each do |user| %>
 <div>
   <p>image</p>
-  <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
+  <%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
   <p><%= user.name %></p>
   <%= link_to "Show", mypage_path(user.id) %>
 </div>

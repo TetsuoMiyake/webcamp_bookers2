@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get "users/:id" => "users#show", as: :mypage
-  resources :users, only: [:index]
+  resources :users, only: [:index, :edit, :update]
   resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update]
 end
