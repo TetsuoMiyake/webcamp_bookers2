@@ -1,0 +1,5 @@
+<h1>User info</h1>
+<%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+<p>name<%= current_user.name %></p>
+<p>introduction<%= current_user.introduction %></p>
+<%= link_to "edit", edit_user_path(current_user.id) %>
