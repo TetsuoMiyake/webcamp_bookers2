@@ -1,13 +1,26 @@
-<%= render 'users/info_a', users: @users %>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
+   <%= render 'users/info_a', users: @users %>
+   <%= render 'users/new_book', users: @users %>
+  </div>
 
-<%= render 'users/new_book', users: @users %>
-
-<h1>Users</h1>
-<% @users.each do |user| %>
-<div>
-  <p>image</p>
-  <%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
-  <p><%= user.name %></p>
-  <%= link_to "Show", mypage_path(user.id) %>
+  <div class="col-sm-7">
+   <h1>Users</h1>
+   <table>
+     <tr>
+       <th>image</th>
+       <th>name</th>
+       <th></th>
+     </tr>
+     <% @users.each do |user| %>
+     <tr>
+       <th><%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %></th>
+       <th><%= user.name %></th>
+       <th><%= link_to "Show", mypage_path(user.id) %></th>
+     </tr>
+     <% end %>
+   </table>
+  </div>
+ </div>
 </div>
-<% end %>

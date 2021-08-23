@@ -1,16 +1,32 @@
-<%= render 'users/info_b', books: @books %>
-
-<%= render 'users/new_book', users: @users %>
-
-<h1>Book detail</h1>
-<div>
-  <%= attachment_image_tag @book_detail.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
-  <%= link_to @book_detail.user.name, mypage_path(@book_detail.user) %>
-  <p><%= @book_detail.title %></p>
-  <p><%= @book_detail.body %></p>
-  <% if @book_detail.user == current_user %>
-   <%= link_to "Edit", edit_book_path(@book_detail) %>
-   <%= link_to "Destroy", book_path(@book_detail), method: :delete, date: { confirm: '本当に消しますか?' } %>
-  <% end %>
-
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
+   <%= render 'users/info_b', books: @books %>
+   <%= render 'users/new_book', users: @users %>
+  </div>
+  <div class="col-sm-7">
+   <h1>Book detail</h1>
+   <tabele>
+     <tr>
+       <% if @book_detail.user == current_user %>
+         <td>
+           <%= attachment_image_tag @book_detail.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %></br>
+           <%= link_to @book_detail.user.name, mypage_path(@book_detail.user) %>
+         </td>
+         <td><%= @book_detail.title %></td>
+         <td><%= @book_detail.body %></td>
+         <td><%= link_to "Edit", edit_book_path(@book_detail) %></td>
+         <td><%= link_to "Destroy", book_path(@book_detail), method: :delete, data: { confirm: '本当に消しますか?' } %></th>
+       <% else %>
+         <td>
+           <%= attachment_image_tag @book_detail.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %></br>
+           <%= link_to @book_detail.user.name, mypage_path(@book_detail.user) %>
+         </td>
+         <td><%= @book_detail.title %></td>
+         <td><%= @book_detail.body %></td>
+       <% end %>
+     </tr>
+   </table>
+  </div>
+ </div>
 </div>
