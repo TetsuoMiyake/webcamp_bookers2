@@ -1,21 +1,26 @@
-<h1>User info</h1>
-<%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
-<div class="row">
-  <div class="col-sm-6">
-   <p>name</p>
-  </div>
-  <div class="col-sm-6">
-   <p><%= current_user.name %></p>
-  </div>
-</div>
+<h2>User info</h2>
+<%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", size: '100x100' %>
+<table class="table">
+  <tr></tr>
+  <tr>
+   <th>
+    <p>name</p>
+   </th>
+   <th>
+    <p><%= current_user.name %></p>
+   </th>
+  </tr>
+
+  <tr>
+   <th>
+    <p>introduction</p>
+   </th>
+   <th>
+    <p><%= current_user.introduction %></p>
+   </th>
+  </tr>
+ </table>
 
 <div class="row">
- <div class="col-sm-6">
-   <p>introduction</p>
- </div>
- <div class="col-sm-6">
-   <p><%= current_user.introduction %></p>
- </div>
+ <%= link_to "", edit_user_path(current_user.id), class:"btn btn-outline-secoundary btn-block fas fa-user-cog" %>
 </div>
-
-<%= link_to "edit", edit_user_path(current_user.id) %>

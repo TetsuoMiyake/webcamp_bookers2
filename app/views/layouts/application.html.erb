@@ -12,40 +12,40 @@
   </head>
 
   <body>
-    <header class="bg-dark">
-      <nav class="navbar navbar-light">
-       <div class="content">
-         <a class="navbar-brand text-white" href="/" >Bookers</a>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+         <a class="navbar-brand" href="/" >Bookers</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
-         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <div class="collapse navbar-collapse collapse" id="navbarNavDropdown">
            <ul class="navbar-nav ml-auto">
            <% if user_signed_in? %>
              <li class="nav-item">
-               <%= link_to "Home", user_path(current_user), class: 'nav-link text-white' %>
+               <%= link_to " Home", user_path(current_user), class: 'nav-link fas fa-home text-light' %>
              </li>
              <li class="nav-item">
-               <%= link_to "Users", users_path, class: 'nav-link text-white' %>
+               <%= link_to " Users", users_path, class: 'nav-link fas fa-users text-light' %>
              </li>
              <li class="nav-item">
-               <%= link_to "Books", books_path, class: 'nav-link text-white' %>
+               <%= link_to " Books", books_path, class: 'nav-link fas fa-book-open text-light' %>
              </li>
              <li class="nav-item">
-               <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+               <%= link_to " logout", destroy_user_session_path, method: :delete, class: 'nav-link fas fa-sign-out-alt text-light' %>
              </li class="nav-item">
            <% else %>
              <li class="nav-item">
-               <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+               <%= link_to " Home", root_path, class: 'nav-link fas fa-home text-light' %>
              </li>
              <li class="nav-item">
-               <%= link_to "About", about_path, class: 'nav-link text-white' %>
+               <%= link_to " About", about_path, class: 'nav-link fas fa-link text-light' %>
              </li>
              <li class="nav-item">
-               <%= link_to "sign up", new_user_registration_path, class: 'nav-link text-white' %>
+               <%= link_to "sign up", new_user_registration_path, class: 'nav-link fas fa-user-plus text-light' %>
              </li>
              <li class="nav-item">
-               <%= link_to "login", new_user_session_path, class: 'nav-link text-white' %>
+               <%= link_to "login", new_user_session_path, class: 'nav-link fas fa-sign-in-alt text-light' %>
              </li>
            <% end %>
            </ul>
@@ -60,7 +60,13 @@
     <%= yield %>
 
     <footer>
-      <p>CopyRight Infratop.inc</p>
+      <div class="container mt-5">
+       <div class="row">
+         <div class="mx-auto">
+           <p>CopyRight Infratop.inc</p>
+         </div>
+       </div>
+      </div>
     </footer>
   </body>
 </html>

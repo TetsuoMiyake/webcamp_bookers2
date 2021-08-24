@@ -16,3 +16,17 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import 'font-awesome';
+
+.btn-outline-secoundary {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+.error_explanation {
+  color: red;
+}
+
+.notice, .success {
+  color: green;
+  margin-bottom: 1rem;
+}
